@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="relative py-20 md:py-32 bg-gradient-to-b from-background to-transparent overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-30">
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="https://cloudflare-r2-oss-d7p.pages.dev/raw/6%E6%9C%8810%E6%97%A5-%E5%B0%81%E9%9D%A2.jpg"
           alt="电影场景背景拼贴画"
           layout="fill"
           objectFit="cover"

@@ -12,9 +12,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placehold.co',
+        hostname: 'cloudflare-r2-oss-d7p.pages.dev',
         port: '',
-        pathname: '/**',
+        pathname: '/raw/**',
       },
     ],
   },

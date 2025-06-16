@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { Container } from '@/components/container';
 
 const visualContent = [
-  { src: "https://placehold.co/600x400.png", alt: "动作电影场景", dataAiHint: "动作片" },
-  { src: "https://placehold.co/600x400.png", alt: "喜剧电视节目剧照", dataAiHint: "喜剧节目" },
-  { src: "https://placehold.co/600x400.png", alt: "动画系列角色", dataAiHint: "动画剧集" },
-  { src: "https://placehold.co/600x400.png", alt: "纪录片风景", dataAiHint: "自然纪录片" },
+  { src: "https://cloudflare-r2-oss-d7p.pages.dev/raw/6%E6%9C%8810%E6%97%A5-%E5%B0%81%E9%9D%A2.jpg", alt: "动作电影场景", dataAiHint: "动作片" },
+  { src: "https://cloudflare-r2-oss-d7p.pages.dev/raw/6%E6%9C%8810%E6%97%A5-%E5%B0%81%E9%9D%A2.jpg", alt: "喜剧电视节目剧照", dataAiHint: "喜剧节目" },
+  { src: "https://cloudflare-r2-oss-d7p.pages.dev/raw/6%E6%9C%8810%E6%97%A5-%E5%B0%81%E9%9D%A2.jpg", alt: "动画系列角色", dataAiHint: "动画剧集" },
+  { src: "https://cloudflare-r2-oss-d7p.pages.dev/raw/6%E6%9C%8810%E6%97%A5-%E5%B0%81%E9%9D%A2.jpg", alt: "纪录片风景", dataAiHint: "自然纪录片" },
 ];
 
 export function VisualsSection() {
