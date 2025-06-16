@@ -21,45 +21,45 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
   {
-    name: 'Basic',
-    price: '$9.99',
-    priceDetails: '/month',
+    name: '基础版',
+    price: '¥68', // Placeholder price, adjust as needed
+    priceDetails: '/月',
     features: [
-      { text: 'Good video quality (720p)', included: true },
-      { text: 'Watch on 1 supported device at a time', included: true },
-      { text: 'Unlimited movies, TV shows, and mobile games', included: true },
-      { text: 'Download on 1 supported device at a time', included: true },
+      { text: '良好画质 (720p)', included: true },
+      { text: '可同时在 1 台受支持设备上观看', included: true },
+      { text: '无限量电影、电视剧和手机游戏', included: true },
+      { text: '可同时在 1 台受支持设备上下载', included: true },
     ],
-    ctaText: 'Choose Basic',
+    ctaText: '选择基础版',
   },
   {
-    name: 'Standard',
-    price: '$15.49',
-    priceDetails: '/month',
+    name: '标准版',
+    price: '¥98', // Placeholder price
+    priceDetails: '/月',
     features: [
-      { text: 'Great video quality (1080p)', included: true },
-      { text: 'Watch on 2 supported devices at a time', included: true },
-      { text: 'Unlimited movies, TV shows, and mobile games', included: true },
-      { text: 'Download on 2 supported devices at a time', included: true },
-      { text: 'Option to add 1 extra member who doesn\'t live with you', included: false }, // Example of a feature not included/upgrade
+      { text: '优质画质 (1080p)', included: true },
+      { text: '可同时在 2 台受支持设备上观看', included: true },
+      { text: '无限量电影、电视剧和手机游戏', included: true },
+      { text: '可同时在 2 台受支持设备上下载', included: true },
+      { text: '可添加 1 位与您不同住的额外会员', included: false }, 
     ],
-    ctaText: 'Choose Standard',
+    ctaText: '选择标准版',
     highlight: true,
-    promotion: 'Most Popular!',
+    promotion: '最受欢迎！',
   },
   {
-    name: 'Premium',
-    price: '$22.99',
-    priceDetails: '/month',
+    name: '高级版',
+    price: '¥128', // Placeholder price
+    priceDetails: '/月',
     features: [
-      { text: 'Our best video quality (4K+HDR)', included: true },
-      { text: 'Watch on 4 supported devices at a time', included: true },
-      { text: 'Unlimited movies, TV shows, and mobile games', included: true },
-      { text: 'Download on 6 supported devices at a time', included: true },
-      { text: 'Netflix spatial audio', included: true },
-      { text: 'Option to add up to 2 extra members who don\'t live with you', included: false }, // Example
+      { text: '最佳画质 (4K+HDR)', included: true },
+      { text: '可同时在 4 台受支持设备上观看', included: true },
+      { text: '无限量电影、电视剧和手机游戏', included: true },
+      { text: '可同时在 6 台受支持设备上下载', included: true },
+      { text: 'Netflix 空间音频', included: true },
+      { text: '可添加最多 2 位与您不同住的额外会员', included: false },
     ],
-    ctaText: 'Choose Premium',
+    ctaText: '选择高级版',
   },
 ];
 
@@ -69,10 +69,10 @@ export function PricingSection() {
       <Container>
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
-            Flexible Plans for Everyone
+            灵活套餐，满足所有需求
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan that fits your entertainment needs. Cancel anytime, no hidden fees.
+            选择最适合您娱乐需求的完美套餐。随时取消，无隐藏费用。
           </p>
         </div>
         
@@ -119,7 +119,7 @@ export function PricingSection() {
         <div className="text-center mt-12">
           <p className="text-muted-foreground italic">
             <TrendingUp className="inline-block mr-2 h-5 w-5 text-primary" />
-            Limited-time offer: Sign up today and get your first month at a special price! (Promotional text, link to specific offer if available)
+            限时优惠：立即注册，首月即享特价！（推广文本，如有特定优惠链接可添加）
           </p>
         </div>
       </Container>

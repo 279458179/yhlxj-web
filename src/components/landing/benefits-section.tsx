@@ -12,33 +12,33 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     icon: Film,
-    title: 'Endless Entertainment',
-    description: 'Access a vast library of movies, TV shows, documentaries, and award-winning Netflix originals.',
+    title: '无尽娱乐',
+    description: '访问海量电影、电视剧、纪录片和屡获殊荣的 Netflix 原创作品。',
   },
   {
     icon: Smartphone,
-    title: 'Watch Anywhere, Anytime',
-    description: 'Stream on your phone, tablet, laptop, or TV. Your shows travel with you.',
+    title: '随时随地观看',
+    description: '在您的手机、平板电脑、笔记本电脑或电视上流畅播放。您的节目与您同行。',
   },
   {
     icon: DownloadCloud,
-    title: 'Download & Go',
-    description: 'Save your favorites to watch offline on the go, without an internet connection.',
+    title: '下载即走',
+    description: '保存您喜爱的内容，以便在没有互联网连接的情况下离线观看。',
   },
   {
     icon: Users,
-    title: 'Family Friendly Profiles',
-    description: 'Create up to five profiles, so everyone in your family can have their own personalized Netflix.',
+    title: '家庭友好账户',
+    description: '最多可创建五个用户账户，让家庭中的每个人都能拥有自己的个性化 Netflix。',
   },
   {
     icon: Tv2,
-    title: 'No Ads, No Interruptions',
-    description: 'Enjoy your viewing experience completely ad-free. Pure entertainment.',
+    title: '无广告，无干扰',
+    description: '完全无广告，尽情享受您的观看体验。纯粹的娱乐。',
   },
   {
     icon: Smile,
-    title: 'Flexible Plans',
-    description: 'Choose a plan that fits your needs. No commitments, cancel anytime.',
+    title: '灵活套餐',
+    description: '选择适合您需求的套餐。无合约，随时取消。',
   },
 ];
 
@@ -47,7 +47,7 @@ export function BenefitsSection() {
     <section className="py-16 md:py-24 bg-background">
       <Container>
         <h2 className="font-headline text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-          Why Choose Netflix?
+          为什么选择 Netflix？
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (

@@ -19,7 +19,7 @@ const PersonalizeContentInputSchema = z.object({
 export type PersonalizeContentInput = z.infer<typeof PersonalizeContentInputSchema>;
 
 const PersonalizeContentOutputSchema = z.object({
-  personalizedContent: z.string().describe('The personalized promotional content.'),
+  personalizedContent: z.string().describe('个性化的中文推广内容。'),
 });
 export type PersonalizeContentOutput = z.infer<typeof PersonalizeContentOutputSchema>;
 
@@ -31,20 +31,21 @@ const prompt = ai.definePrompt({
   name: 'personalizeContentPrompt',
   input: {schema: PersonalizeContentInputSchema},
   output: {schema: PersonalizeContentOutputSchema},
-  prompt: `You are an AI assistant designed to create personalized promotional content for Netflix.
+  prompt: `你是一个人工智能助手，旨在为 Netflix 创建个性化的推广内容。
 
-  Given the user's geographical location, trending shows, and popular content in their region, generate compelling promotional content to encourage them to subscribe to Netflix.
-  Location: {{{location}}}
-  Trending Shows: {{#each trendingShows}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
-  Popular Content: {{#each popularContent}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
+  根据用户的地理位置、热门节目和其所在地区的流行内容，生成引人注目的推广内容，以鼓励他们订阅 Netflix。
+  回应必须是中文。
+  地点：{{{location}}}
+  热门节目：{{#each trendingShows}}{{{this}}}{{#unless @last}}、 {{/unless}}{{/each}}
+  流行内容：{{#each popularContent}}{{{this}}}{{#unless @last}}、 {{/unless}}{{/each}}
 
-  Create content that highlights relevant shows and movies, and entices the user to subscribe. Focus on specific shows that are both trending and popular in their region.
-  DO NOT include any personal information about the user, or make assumptions of the user's race, religion, creed, color, national origin, ancestry, disability, marital status, sex, gender identity or expression, sexual orientation, or military or veteran status.
-  Be aware that Gemini has built-in safety filters which might block certain content generation, so you may need to try a few times.
-  Do not mention that the content is personalized. Be natural.
-  Be concise. The content should be less than 200 characters.
-  Do not include any hashtags.
-  Do not include any emojis.
+  创建突出相关节目和电影的内容，并吸引用户订阅。重点关注在其所在地区既热门又流行的特定节目。
+  不要包含任何用户的个人信息，也不要对用户的种族、宗教、信仰、肤色、国籍、血统、残疾、婚姻状况、性别、性别认同或表达、性取向或军人或退伍军人身份进行假设。
+  请注意，Gemini 内置了安全过滤器，可能会阻止某些内容的生成，因此您可能需要尝试几次。
+  不要提及内容是个性化的。力求自然。
+  力求简洁。内容应少于 100 个汉字。
+  不要包含任何话题标签。
+  不要包含任何表情符号。
   `,
 });
 

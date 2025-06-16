@@ -15,7 +15,7 @@ import { Loader2, Sparkles } from 'lucide-react';
 import { Container } from '@/components/container';
 
 const FormSchema = z.object({
-  location: z.string().min(2, { message: "Please enter your city or region." }),
+  location: z.string().min(2, { message: "请输入您所在的城市或地区。" }),
 });
 
 type FormData = z.infer<typeof FormSchema>;
@@ -45,8 +45,8 @@ export function PersonalizationForm() {
     } else {
       toast({
         variant: "destructive",
-        title: "Personalization Failed",
-        description: result.message || "Could not generate personalized content.",
+        title: "个性化失败",
+        description: result.message || "无法生成个性化内容。",
       });
     }
   };
@@ -57,9 +57,9 @@ export function PersonalizationForm() {
         <Card className="max-w-2xl mx-auto bg-card border-border shadow-xl">
           <CardHeader className="text-center">
             <Sparkles className="mx-auto h-12 w-12 text-primary mb-4" />
-            <CardTitle className="font-headline text-3xl md:text-4xl text-foreground">Get Your Personalized Netflix Teaser!</CardTitle>
+            <CardTitle className="font-headline text-3xl md:text-4xl text-foreground">获取您的个性化 Netflix 预告！</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Tell us where you are, and we&apos;ll craft a special sneak peek just for you.
+              告诉我们您在哪里，我们将为您精心制作一份特别的抢先看。
             </CardDescription>
           </CardHeader>
           <Form {...form}>
@@ -70,11 +70,11 @@ export function PersonalizationForm() {
                   name="location"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="location" className="text-lg">Your Location (e.g., London, Tokyo)</FormLabel>
+                      <FormLabel htmlFor="location" className="text-lg">您的位置（例如：伦敦、东京）</FormLabel>
                       <FormControl>
                         <Input 
                           id="location" 
-                          placeholder="Enter your city or region" 
+                          placeholder="输入您所在的城市或地区" 
                           {...field} 
                           className="text-base py-3"
                           aria-describedby="location-error"
@@ -90,12 +90,12 @@ export function PersonalizationForm() {
                   {isLoading ? (
                     <>
                       <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Generating...
+                      生成中...
                     </>
                   ) : (
                     <>
                       <Sparkles className="mr-2 h-5 w-5" />
-                      Get My Teaser
+                      获取我的预告
                     </>
                   )}
                 </Button>
@@ -104,7 +104,7 @@ export function PersonalizationForm() {
           </Form>
           {personalizedContent && (
             <div className="p-6 mt-6 border-t border-border">
-              <h3 className="font-headline text-2xl text-primary mb-3 text-center">Your Personalized Netflix Welcome:</h3>
+              <h3 className="font-headline text-2xl text-primary mb-3 text-center">您的个性化 Netflix 欢迎语：</h3>
               <p className="text-lg text-foreground bg-secondary p-4 rounded-md shadow text-center">{personalizedContent}</p>
             </div>
           )}

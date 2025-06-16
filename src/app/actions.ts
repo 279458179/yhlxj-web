@@ -3,7 +3,7 @@ import { personalizeContent, type PersonalizeContentInput, type PersonalizeConte
 import { z } from 'zod';
 
 const GetPersonalizedPromoContentInputSchema = z.object({
-  location: z.string().min(1, "Location is required."),
+  location: z.string().min(1, "位置是必填项。"),
   // For simplicity, we'll use fixed trending/popular shows, but this could be dynamic
 });
 
@@ -25,8 +25,8 @@ export async function getPersonalizedPromoContentAction(
 
   // Placeholder data for trending and popular shows
   // In a real app, this might come from an API or be more dynamic
-  const dummyTrendingShows = ["Stranger Things", "Bridgerton", "The Witcher"];
-  const dummyPopularContent = ["Squid Game", "Money Heist", "Extraction 2"];
+  const dummyTrendingShows = ["怪奇物语", "布里奇顿", "猎魔人"]; // Example: Stranger Things, Bridgerton, The Witcher
+  const dummyPopularContent = ["鱿鱼游戏", "纸钞屋", "惊天营救2"]; // Example: Squid Game, Money Heist, Extraction 2
 
   const aiInput: PersonalizeContentInput = {
     location: validationResult.data.location,
@@ -40,7 +40,7 @@ export async function getPersonalizedPromoContentAction(
   } catch (error) {
     console.error("Error personalizing content:", error);
     // Check if error is an instance of Error to safely access message property
-    const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
-    return { success: false, message: `Failed to personalize content: ${errorMessage}` };
+    const errorMessage = error instanceof Error ? error.message : "发生意外错误。";
+    return { success: false, message: `个性化内容失败： ${errorMessage}` };
   }
 }

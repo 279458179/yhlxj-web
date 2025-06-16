@@ -10,11 +10,11 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 opacity-30">
         <Image
           src="https://placehold.co/1920x1080.png"
-          alt="Background collage of movie scenes"
+          alt="电影场景背景拼贴画"
           layout="fill"
           objectFit="cover"
           priority
-          data-ai-hint="movie collage"
+          data-ai-hint="电影拼贴"
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
@@ -23,15 +23,15 @@ export function HeroSection() {
           StreamVerse
         </h1>
         <p className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-          Unlock a Universe of Entertainment
+          解锁娱乐宇宙
         </p>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          Dive into thousands of movies, TV shows, and exclusive originals. Your next favorite story awaits.
+          沉浸于数以千计的电影、电视剧和独家原创内容。您的下一个挚爱故事正等待着您。
         </p>
         <Link href="https://nf.video/NNv1V" target="_blank" rel="noopener noreferrer">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
             <PlayIcon className="mr-2 h-6 w-6" />
-            Start Watching Now
+            立即开始观看
           </Button>
         </Link>
       </Container>
