@@ -1,8 +1,9 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Container } from '@/components/container';
-import { CheckCircle2, TrendingUp } from 'lucide-react';
+import { CheckCircle2, Sparkles, PlayIcon } from 'lucide-react';
 
 interface PlanFeature {
   text: string;
@@ -22,7 +23,7 @@ interface PricingPlan {
 const plans: PricingPlan[] = [
   {
     name: '基础版',
-    price: '¥68', // Placeholder price, adjust as needed
+    price: '¥68',
     priceDetails: '/月',
     features: [
       { text: '良好画质 (720p)', included: true },
@@ -34,7 +35,7 @@ const plans: PricingPlan[] = [
   },
   {
     name: '标准版',
-    price: '¥98', // Placeholder price
+    price: '¥98',
     priceDetails: '/月',
     features: [
       { text: '优质画质 (1080p)', included: true },
@@ -49,7 +50,7 @@ const plans: PricingPlan[] = [
   },
   {
     name: '高级版',
-    price: '¥128', // Placeholder price
+    price: '¥128',
     priceDetails: '/月',
     features: [
       { text: '最佳画质 (4K+HDR)', included: true },
@@ -116,11 +117,22 @@ export function PricingSection() {
             </Card>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground italic">
-            <TrendingUp className="inline-block mr-2 h-5 w-5 text-primary" />
-            限时优惠：立即注册，首月即享特价！（推广文本，如有特定优惠链接可添加）
+        <div className="text-center mt-16 p-6 md:p-8 bg-primary/10 rounded-lg shadow-xl border border-primary/30">
+          <h3 className="font-headline text-3xl md:text-4xl text-primary mb-4">
+            <Sparkles className="inline-block mr-2 h-7 w-7 text-primary animate-pulse" />
+            年度限时特惠！
+          </h3>
+          <p className="text-lg md:text-xl text-foreground mb-6 max-w-xl mx-auto">
+            官网订阅太贵？现在加入 StreamVerse 年度会员，全年顶级娱乐服务
+            <span className="line-through text-muted-foreground/80 mx-1">原价 ¥320</span>
+            <strong className="text-primary text-2xl md:text-3xl">现在仅需 ¥288！</strong>
           </p>
+          <Link href="https://nf.video/NNv1V" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-xl px-10 py-7 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+               <PlayIcon className="mr-2 h-6 w-6" />
+              立即抢购 ¥288 年度特惠
+            </Button>
+          </Link>
         </div>
       </Container>
     </section>
