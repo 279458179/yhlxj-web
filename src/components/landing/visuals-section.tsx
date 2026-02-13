@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { Container } from '@/components/container';
 
 const visualContent = [
-  { src: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop", alt: "Netflix 标志性红标", dataAiHint: "品牌标志" },
-  { src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop", alt: "手机上的 Netflix 界面", dataAiHint: "移动端体验" },
-  { src: "https://images.unsplash.com/photo-1512070800540-0d4192faa057?q=80&w=800&auto=format&fit=crop", alt: "正在观看 Netflix", dataAiHint: "家庭娱乐" },
-  { src: "https://images.unsplash.com/photo-1585647347483-22b66260dfff?q=80&w=800&auto=format&fit=crop", alt: "爆米花与电影之夜", dataAiHint: "观影氛围" },
-  { src: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=800&auto=format&fit=crop", alt: "家庭影院氛围", dataAiHint: "大屏体验" },
-  { src: "https://images.unsplash.com/photo-1585647347384-2593bc35786b?q=80&w=800&auto=format&fit=crop", alt: "享受流媒体时光", dataAiHint: "休闲时刻" },
+  { src: "/images/netflix-logo.jpg", alt: "Netflix 标志性红标", dataAiHint: "品牌标志" },
+  { src: "/images/netflix-mobile.jpg", alt: "手机上的 Netflix 界面", dataAiHint: "移动端体验" },
+  { src: "/images/netflix-watching.jpg", alt: "正在观看 Netflix", dataAiHint: "家庭娱乐" },
+  { src: "/images/netflix-popcorn.jpg", alt: "爆米花与电影之夜", dataAiHint: "观影氛围" },
+  { src: "/images/netflix-theater.jpg", alt: "家庭影院氛围", dataAiHint: "大屏体验" },
+  { src: "/images/netflix-relax.jpg", alt: "享受流媒体时光", dataAiHint: "休闲时刻" },
 ];
 
 export function VisualsSection() {
