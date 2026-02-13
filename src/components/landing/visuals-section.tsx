@@ -15,7 +15,7 @@ export function VisualsSection() {
     <section className="py-16 md:py-24 bg-card">
       <Container>
         <h2 className="font-headline text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-          一个充满故事的世界
+          一个充满精彩故事的世界
         </h2>
         <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
           从备受好评的剧情片到令人捧腹的喜剧和引人入胜的纪录片，总有新的发现等待着您。
