@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="relative py-20 md:py-32 bg-gradient-to-b from-background to-transparent overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-30">
         <Image
-          src="https://cloudflare-r2-oss-d7p.pages.dev/raw/Netflix%20TV%E7%89%88%E7%95%8C%E9%9D%A2%E7%BB%88%E4%BA%8E%E6%9B%B4%E6%96%B0%E4%BA%86_1_S%E4%B8%A8R%E7%81%AC%E5%85%88%E7%9F%A5_%E6%9D%A5%E8%87%AA%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%BD%91%E9%A1%B5%E7%89%88.jpg"
+          src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
           alt="电影场景背景拼贴画"
           layout="fill"
           objectFit="cover"
