@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { Container } from '@/components/container';
 
 const visualContent = [
-  { src: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop", alt: "动作电影场景", dataAiHint: "动作片" },
-  { src: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop", alt: "Netflix 标志性画面", dataAiHint: "品牌标志" },
-  { src: "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=800&auto=format&fit=crop", alt: "动画系列角色", dataAiHint: "动画剧集" },
-  { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop", alt: "纪录片风景", dataAiHint: "自然纪录片" },
-  { src: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop", alt: "经典电影剧照", dataAiHint: "经典电影" },
-  { src: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=800&auto=format&fit=crop", alt: "悬疑剧集氛围", dataAiHint: "悬疑剧" },
+  { src: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop", alt: "Netflix 标志性红标", dataAiHint: "品牌标志" },
+  { src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop", alt: "手机上的 Netflix 界面", dataAiHint: "移动端体验" },
+  { src: "https://images.unsplash.com/photo-1512070800540-0d4192faa057?q=80&w=800&auto=format&fit=crop", alt: "正在观看 Netflix", dataAiHint: "家庭娱乐" },
+  { src: "https://images.unsplash.com/photo-1585647347483-22b66260dfff?q=80&w=800&auto=format&fit=crop", alt: "爆米花与电影之夜", dataAiHint: "观影氛围" },
+  { src: "https://images.unsplash.com/photo-1522869635100-8f47562584a5?q=80&w=800&auto=format&fit=crop", alt: "Netflix 电视界面", dataAiHint: "大屏体验" },
+  { src: "https://images.unsplash.com/photo-1585647347384-2593bc35786b?q=80&w=800&auto=format&fit=crop", alt: "享受流媒体时光", dataAiHint: "休闲时刻" },
 ];
 
 export function VisualsSection() {
