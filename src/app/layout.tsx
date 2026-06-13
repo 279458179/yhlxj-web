@@ -15,10 +15,13 @@ const notoSansSc = Noto_Sans_SC({
   display: 'swap',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://yhlxj-web.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nf.myg2ray.top';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: '银河录像局优惠入口 | Netflix、Spotify、YouTube Premium 与 AI 工具订阅',
     template: '%s | 银河录像局优惠入口',
