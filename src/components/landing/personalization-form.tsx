@@ -1,114 +1,81 @@
-'use client';
-
-import { useState } from 'react';
-import { useForm, type SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import Link from 'next/link';
+import { ArrowRight, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { getPersonalizedPromoContentAction, type GetPersonalizedPromoContentInput } from '@/app/actions';
-import { useToast } from "@/hooks/use-toast";
-import { Loader2, Sparkles } from 'lucide-react';
 import { Container } from '@/components/container';
 
-const FormSchema = z.object({
-  location: z.string().min(2, { message: "请输入您所在的城市或地区。" }),
-});
+const PROMO_URL = 'https://nf.video/NNv1V';
 
-type FormData = z.infer<typeof FormSchema>;
+const checks = [
+  '确认你要购买的是影音、音乐、AI 工具还是组合服务。',
+  '进入购买页后，以目标站展示的实时商品、价格和说明为准。',
+  '下单前阅读账号类型、售后规则、可用地区和使用限制。',
+  '长期使用优先选择有明确说明和售后渠道的服务。',
+];
+
+const faqs = [
+  {
+    question: '这个页面适合投 Google 吗？',
+    answer:
+      '适合做搜索承接页。它围绕用户真实搜索意图组织内容，包括服务范围、适用人群、购买前注意事项和清晰 CTA，比单纯品牌介绍更容易承接购买需求。',
+  },
+  {
+    question: '为什么不只写 Netflix？',
+    answer:
+      '目标站覆盖影音、AI、路由器和增值服务等类别。页面如果只讲 Netflix，会浪费 Spotify、YouTube Premium、GPT Plus、Midjourney 等搜索流量。',
+  },
+  {
+    question: '页面里的价格要不要固定写死？',
+    answer:
+      '不建议把具体价格写死在站内，除非你能长期维护。更稳的方式是讲清选择逻辑，并提示最终价格以推广目标页实时展示为准。',
+  },
+  {
+    question: '推广按钮应该放几次？',
+    answer:
+      '首屏、中段选择区、FAQ 后和页脚都应该有入口。用户的决策时机不同，重复 CTA 可以减少回滚寻找按钮的成本。',
+  },
+];
 
 export function PersonalizationForm() {
-  const [personalizedContent, setPersonalizedContent] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<FormData>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      location: "",
-    },
-  });
-
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    setIsLoading(true);
-    setPersonalizedContent(null);
-
-    const actionInput: GetPersonalizedPromoContentInput = { location: data.location };
-    const result = await getPersonalizedPromoContentAction(actionInput);
-
-    setIsLoading(false);
-    if (result.success && result.data) {
-      setPersonalizedContent(result.data.personalizedContent);
-    } else {
-      toast({
-        variant: "destructive",
-        title: "个性化失败",
-        description: result.message || "无法生成个性化内容。",
-      });
-    }
-  };
-
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="faq" className="bg-card py-16 md:py-24">
       <Container>
-        <Card className="max-w-2xl mx-auto bg-card border-border shadow-xl">
-          <CardHeader className="text-center">
-            <Sparkles className="mx-auto h-12 w-12 text-primary mb-4" />
-            <CardTitle className="font-headline text-3xl md:text-4xl text-foreground">获取您的个性化 Netflix 预告！</CardTitle>
-            <CardDescription className="text-muted-foreground">
-              告诉我们您在哪里，我们将为您精心制作一份特别的抢先看。
-            </CardDescription>
-          </CardHeader>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <CardContent className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="location"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="location" className="text-lg">您的位置（例如：伦敦、东京）</FormLabel>
-                      <FormControl>
-                        <Input 
-                          id="location" 
-                          placeholder="输入您所在的城市或地区" 
-                          {...field} 
-                          className="text-base py-3"
-                          aria-describedby="location-error"
-                        />
-                      </FormControl>
-                      <FormMessage id="location-error" />
-                    </FormItem>
-                  )}
-                />
-              </CardContent>
-              <CardFooter className="flex justify-center">
-                <Button type="submit" disabled={isLoading} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4">
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      生成中...
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="mr-2 h-5 w-5" />
-                      获取我的预告
-                    </>
-                  )}
-                </Button>
-              </CardFooter>
-            </form>
-          </Form>
-          {personalizedContent && (
-            <div className="p-6 mt-6 border-t border-border">
-              <h3 className="font-headline text-2xl text-primary mb-3 text-center">您的个性化 Netflix 欢迎语：</h3>
-              <p className="text-lg text-foreground bg-secondary p-4 rounded-md shadow text-center">{personalizedContent}</p>
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="rounded-lg border border-border bg-background p-6 shadow-xl md:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Before Buying</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground">
+              进入购买页前，先确认这几件事
+            </h2>
+            <ul className="mt-7 space-y-4">
+              {checks.map((check) => (
+                <li key={check} className="flex gap-3 text-sm leading-7 text-muted-foreground">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                  <span>{check}</span>
+                </li>
+              ))}
+            </ul>
+            <Link href={PROMO_URL} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="mt-8 w-full">
+                我已了解，进入优惠入口
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <HelpCircle className="h-7 w-7 text-primary" />
+              <h2 className="text-3xl font-bold tracking-tight text-foreground">常见问题</h2>
             </div>
-          )}
-        </Card>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <article key={faq.question} className="rounded-lg border border-border bg-background p-5">
+                  <h3 className="text-lg font-semibold text-foreground">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   );
