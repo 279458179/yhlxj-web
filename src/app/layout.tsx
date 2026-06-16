@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    'baidu-site-verification': 'codeva-V6hUBZuTUt',
+  },
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
